@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechFest 2024 - Mystery Box Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+       #mobile-menu {
+            display: none;
+            flex-direction: column;
+        }
+        .custom-image {
+    width: 40px; 
+    height: auto; 
+    margin-right: 8px;
+    border-radius: 4px; 
+}
+
+        @media (max-width: 768px) {
+            #mobile-menu.show {
+                display: flex;
+            }
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-black">
+
+    <!-- Navbar -->
+    <nav class="w-full h-20 bg-[#1842B6] flex justify-between items-center px-4">
+        <div class="flex items-center">
+            <img class="custom-image text-2xl text-white font-bold" src="/techfest1.png" alt="Custom Image">
+        </div>
+        <ul class="md:flex hidden font-semibold text-white flex-grow justify-center space-x-6">
+            <li class="cursor-pointer uppercase font-bold"><a href="index.html" class="hover:text-[#20c997] transition-colors">Home</a></li>
+            <!-- <li class="cursor-pointer uppercase font-bold"><a href="aboutus.html" class="hover:text-[#20c997] transition-colors">About Us</a></li> -->
+            <li class="cursor-pointer uppercase font-bold"><a href="Event.html" class="hover:text-[#20c997] transition-colors">Events</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="result.html" class="hover:text-[#20c997] transition-colors">Result</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="contactus.html" class="hover:text-[#20c997] transition-colors">Contact Us</a></li>
+        </ul>
+
+        <div class="md:hidden">
+            <a id="hamburger" class="text-4xl cursor-pointer">&#8801;</a>
+        </div>
+    </nav>
+    
+
+    <ul id="mobile-menu" class="hidden flex-col items-center bg-[#1842B6] text-white font-bold mt-2 md:hidden">
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="index.html" >Home</a></li>
+        <!-- <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="aboutus.html" >About Us</a></li> -->
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="Event.html" >Events</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="result.html" >Result</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="contactus.html" >Contact Us</a></li>
+    </ul>
+
+
+    <!-- Event Header -->
+    <header class="bg-blue-600 text-white py-12">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">Unveil the Unseen - Mystery Box Challenge</h1>
+            <p class="mt-2 text-lg italic">Where Creativity Meets the Unknown</p>
+            <p class="mt-4 text-lg">Gear up for an intense, innovative battle with unpredictable elements!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-8 p-4 space-y-8">
+        <!-- Event Date and Coordinators -->
+        <section class="bg-white shadow-md p-6 rounded-lg">
+            <h2 class="text-3xl font-semibold text-center mb-6">Event Details</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Event Date -->
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">Date of Event</h3>
+                    <p class="text-lg text-blue-600">12th November 2024</p>
+                </div>
+                <!-- Coordinators -->
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">Teacher Coordinators</h3>
+                    <p>Teacher: <span class="text-blue-600">Prof. Irani Majumdar</span></p>
+                </div>
+                <div class="text-center"></div>
+                    <h3 class="text-xl font-semibold mb-2">Student Coordinators</h3>
+                    <p>Student: <span class="text-blue-600"></span></p>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Description -->
+        <section class="bg-white shadow-md p-6 rounded-lg">
+            <h2 class="text-3xl font-semibold text-center mb-6">About the Event</h2>
+            <p class="text-lg text-justify mb-4">
+                The CodeFeasta at TechFest 2024 is designed to foster innovation and collaboration among aspiring developers. Participants will work in teams to develop creative solutions to real-world problems within a limited time. It’s a great opportunity for students to test their coding skills, learn new technologies, and network with industry experts.
+            </p>
+            <p class="text-lg text-justify mb-4">
+                This event will push the limits of creativity, teamwork, and problem-solving skills. Expect a fun, challenging, and rewarding experience where you can demonstrate your talents and compete for exciting prizes!
+            </p>
+        </section>
+
+        <!-- Event Rules and Regulations -->
+        <section class="bg-white shadow-md p-6 rounded-lg">
+            <h2 class="text-3xl font-semibold text-center mb-6">Rules and Regulations</h2>
+            <ul class="list-disc list-inside text-lg space-y-3">
+                <li>Participants must be current university students.</li>
+                <li>Teams should consist of 3-5 members.</li>
+                <li>The use of any programming language or technology is allowed.</li>
+                <li>Participants must submit their projects within the allocated time.</li>
+                <li>All decisions made by the judges are final.</li>
+            </ul>
+        </section>
+
+        <!-- Event Video -->
+      
+        <!-- <section class="bg-white shadow-md p-6 rounded-lg text-center">
+            <h2 class="text-3xl font-semibold text-center mb-6">Event Highlights</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/vnmZAfIMNhA?si=-ngWxPCe4nVg29zV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section> -->
+        
+        
+
+
+
+
+        <!-- Registration Link -->
+        <section class="bg-white shadow-md p-6 rounded-lg text-center">
+            <h2 class="text-3xl font-semibold text-center mb-6">Ready to Participate?</h2>
+            <p class="text-lg mb-4">Register now and secure your spot in the ultimate coding challenge!</p>
+            <a href="https://forms.gle/phJ3BVB88XSDyPqZ6" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300 ease-in-out">
+                Register Now
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 TechFest</p>
+        </div>
+    </footer>
+</body>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</html>

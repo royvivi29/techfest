@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Custom styles for mobile menu */
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+        }
+        .custom-image {
+            width: 40px; 
+            height: auto; 
+            margin-right: 8px;
+            border-radius: 4px; 
+        }
+
+        @media (max-width: 768px) {
+            #mobile-menu.show {
+                display: flex;
+            }
+        }
+
+        /* Styles for the background and animated overlay */
+        body {
+            background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        #animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-950">
+    <!-- Animated Background Canvas -->
+    <canvas id="animated-bg"></canvas>
+
+    <!-- Content Wrapper -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav class="w-full h-20 bg-[#1842B6] flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <img class="custom-image text-2xl text-white font-bold" src="/techfest1.png" alt="Custom Image">
+            </div>
+            <ul class="md:flex hidden font-semibold text-white flex-grow justify-center space-x-6">
+                <li class="cursor-pointer uppercase font-bold"><a href="index.html" class="hover:text-[#20c997] transition-colors">Home</a></li>
+                <li class="cursor-pointer uppercase font-bold"><a href="Event.html" class="hover:text-[#20c997] transition-colors">Events</a></li>
+                <li class="cursor-pointer uppercase font-bold"><a href="result.html" class="hover:text-[#20c997] transition-colors">Result</a></li>
+                <li class="cursor-pointer uppercase font-bold"><a href="contactus.html" class="hover:text-[#20c997] transition-colors">Contact Us</a></li>
+            </ul>
+
+            <div class="md:hidden">
+                <a id="hamburger" class="text-4xl cursor-pointer">&#8801;</a>
+            </div>
+        </nav>
+        
+        <ul id="mobile-menu" class="hidden flex-col items-center bg-[#1842B6] text-white font-bold mt-2 md:hidden">
+            <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="index.html" >Home</a></li>
+            <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="Event.html" >Events</a></li>
+            <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="result.html" >Result</a></li>
+            <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="contactus.html" >Contact Us</a></li>
+        </ul>
+
+        <!-- Contact Section -->
+        <section class="text-white body-font relative">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-col text-center w-full mb-12">
+                    <h1 class="sm:text-4xl text-3xl font-medium title-font mb-4">Contact Us</h1>
+                    <p class="lg:w-2/3 mx-auto leading-relaxed text-base">If you have any questions or want to get in touch, fill out the form below!</p>
+                </div>
+        
+                <!-- Contact Form -->
+                <form action="https://api.web3forms.com/submit" method="POST" class="lg:w-1/2 md:w-2/3 w-full mx-auto">
+                    <!-- Hidden input for access_key -->
+                    <input type="hidden" name="access_key" value="3ec5a659-13bb-4803-9d23-0eceec091d0a">
+        
+                    <div class="flex flex-wrap -m-2">
+                        <!-- Name field -->
+                        <div class="p-2 w-full md:w-1/2">
+                            <div class="relative">
+                                <label for="name" class="leading-7 text-sm text-gray-400">Name</label>
+                                <input type="text" id="name" name="name" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-600 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+                            </div>
+                        </div>
+                        <!-- Email field -->
+                        <div class="p-2 w-full md:w-1/2">
+                            <div class="relative">
+                                <label for="email" class="leading-7 text-sm text-gray-400">Email</label>
+                                <input type="email" id="email" name="email" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-600 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+                            </div>
+                        </div>
+                        <!-- Subject field -->
+                        <div class="p-2 w-full">
+                            <div class="relative">
+                                <label for="subject" class="leading-7 text-sm text-gray-400">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-600 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+                            </div>
+                        </div>
+                        <!-- Message field -->
+                        <div class="p-2 w-full">
+                            <div class="relative">
+                                <label for="message" class="leading-7 text-sm text-gray-400">Message</label>
+                                <textarea id="message" name="message" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-600 focus:border-indigo-500 focus:bg-black focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" required></textarea>
+                            </div>
+                        </div>
+                        <!-- Submit button -->
+                        <div class="p-2 w-full">
+                            <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+               
+    </div>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Animated Background
+        (function() {
+            const canvas = document.getElementById('animated-bg');
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+
+            function setCanvasSize() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = Math.random() * 2 - 1;
+                    this.vy = Math.random() * 2 - 1;
+                    this.radius = Math.random() * 2 + 1;
+                    this.color = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.2})`;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0 || this.x > width) this.vx = -this.vx;
+                    if (this.y < 0 || this.y > height) this.vy = -this.vy;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                setCanvasSize();
+                particles = Array(100).fill().map(() => new Particle());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+
+                // Draw connections
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 100) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 - distance / 500})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                init();
+            });
+        })();
+    </script>
+</body>
+</html>

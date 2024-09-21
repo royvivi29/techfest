@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Starry Sky Background */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #020107 0%, #201b46 100%);
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        /* Centered Content */
+        #center {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+        }
+
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+        }
+
+        .custom-image {
+            width: 30%;
+            height: auto;
+            margin-right: 8px;
+            border-radius: 4px;
+        }
+
+        .hamburger {
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .hamburger:hover {
+            color: #20c997;
+        }
+
+        @media (max-width: 768px) {
+            #mobile-menu.show {
+                display: flex;
+            }
+        }
+
+        #dynamic-text {
+            font-size: 3rem;
+            font-family: sans-serif;
+        }
+
+        /* Star Animations */
+        @keyframes twinkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes shootingStar {
+            0% { transform: translateX(0) translateY(0); opacity: 1; }
+            100% { transform: translateX(-100vw) translateY(100vh); opacity: 0; }
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            opacity: 0;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4a5568;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2d3748;
+        }
+        .nav{
+            background-color: #1842B6;
+        }
+        .competition-section {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem 0;
+        }
+
+        .competition-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .competition-section {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem 0;
+        }
+
+        .competition-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .custom-text-color {
+            color: #9daaf2;
+        }
+
+        .custom-bg-color {
+            background-color: #0ea5e9;
+        }
+
+        .custom-bg-color:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        #dynamic-heading{
+            color: #20c997;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stars"></div>
+
+    <nav class="nav w-full h-20  flex justify-between items-center px-4 relative z-10">
+        <div class="flex items-center">
+            <img class="custom-image text-2xl text-white font-bold" src="/techfest1.png" alt="Custom Image">
+        </div>
+        <ul class="md:flex hidden font-semibold text-white flex-grow justify-center space-x-6">
+            <li class="cursor-pointer uppercase font-bold"><a href="index.html" class="hover:text-[#20c997] transition-colors">Home</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="Event.html" class="hover:text-[#20c997] transition-colors">Events</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="result.html" class="hover:text-[#20c997] transition-colors">Result</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="contactus.html" class="hover:text-[#20c997] transition-colors">Contact Us</a></li>
+        </ul>
+
+        <div class="md:hidden">
+            <a id="hamburger" class="hamburger text-4xl cursor-pointer">&#8801;</a>
+        </div>
+    </nav>
+
+    <ul id="mobile-menu" class="hidden flex-col items-center bg-[#1842B6] text-white font-bold mt-2 md:hidden relative z-10">
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="index.html">Home</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="Event.html">Events</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="result.html">Result</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="contactus.html">Contact Us</a></li>
+    </ul>
+
+    <section class="competition-section py-8">
+        <div class="container mx-auto">
+            <h2 id="dynamic-heading" class="text-4xl  uppercase font-bold text-center mb-8">
+                <span>C</span><span>O</span><span>M</span><span>P</span><span>E</span><span>T</span><span>I</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span>
+            </h2>
+        </div>
+
+        <!-- Card Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Competition Card 1 -->
+            <div class="ml-5 mr-5 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 competition-card">
+                <img src="/4893415.jpg" alt="Competition 1" class="w-full h-40 sm:h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 custom-text-color">Codefeasta</h3>
+                    <a href="codefeasta.html" class="block text-center text-white text-base py-2 px-4 rounded-3xl transition-colors duration-300 custom-bg-color">
+                        Read More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Competition Card 2 -->
+            <div class="ml-5 mr-5 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 competition-card">
+                <img src="/mystery.jpg" alt="Competition 2" class="w-full h-40 sm:h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 custom-text-color">Mystery Box Challenge</h3>
+                    <a href="mysterybox.html"  class="block text-center text-white text-base py-2 px-4 rounded-3xl transition-colors duration-300 custom-bg-color">
+                        Read More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Competition Card 3 -->
+            <div class="ml-5 mr-5 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 competition-card">
+                <img src="/40752.jpg" alt="Competition 3" class="w-full h-40 sm:h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 custom-text-color">Coding Challenge</h3>
+                    <a href="codingsloving.html" class="block text-center text-white text-base py-2 px-4 rounded-3xl transition-colors duration-300 custom-bg-color">
+                        Read More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Competition Card 4 -->
+            <div class="ml-5 mr-5 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 competition-card">
+                <img src="/8186181.jpg" alt="Competition 4" class="w-full h-40 sm:h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 custom-text-color">Escape Room Math Challenge</h3>
+                    <a href="escaperoom.html" class="block text-center text-white text-base py-2 px-4 rounded-3xl transition-colors duration-300 custom-bg-color">
+                        Read More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Competition Card 5 -->
+            <div class="ml-5 mr-5 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 competition-card bg-gray-900">
+                <img src="/debugging.jpg" alt="Competition 5" class="w-full h-40 sm:h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 custom-text-color">Debugging Battle</h3>
+                    <a href="debuggingbattle.html" class="block text-center text-white text-base py-2 px-4 rounded-3xl transition-colors duration-300 custom-bg-color">
+                        Read More
+                    </a>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Generate stars
+        const starsContainer = document.querySelector('.stars');
+        const starCount = 200;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.width = `${Math.random() * 2 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite`;
+            starsContainer.appendChild(star);
+        }
+
+        // Generate shooting stars
+        setInterval(() => {
+            const shootingStar = document.createElement('div');
+            shootingStar.classList.add('shooting-star');
+            shootingStar.style.left = `${Math.random() * 100}%`;
+            shootingStar.style.top = '0';
+            shootingStar.style.animation = `shootingStar ${Math.random() * 2 + 1}s linear`;
+            starsContainer.appendChild(shootingStar);
+
+            setTimeout(() => {
+                shootingStar.remove();
+            }, 3000);
+        }, 2000);
+    </script>
+</body>
+
+</html>

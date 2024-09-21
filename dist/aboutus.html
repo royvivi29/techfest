@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> -->
+    <style>
+        /* Custom styles for mobile menu */
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+        }
+        .custom-image {
+            width: 40px; 
+            height: auto; 
+            margin-right: 8px;
+            border-radius: 4px; 
+        }
+
+        @media (max-width: 768px) {
+            #mobile-menu.show {
+                display: flex;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-950">
+    <!-- Navbar -->
+    <nav class="w-full h-20 bg-indigo-200 flex justify-between items-center px-4 fixed top-0 left-0 right-0 z-50">
+        <div class="flex items-center">
+            <img class="custom-image text-2xl text-indigo-700 font-bold" src="/favicon-196x196.png" alt="Custom Image">
+        </div>
+        <ul class="md:flex hidden font-semibold flex-grow justify-center space-x-6">
+            <li class="cursor-pointer uppercase font-bold"><a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a></li>
+            <!-- <li class="cursor-pointer uppercase font-bold"><a href="aboutus.html" class="hover:text-indigo-600 transition-colors">About Us</a></li> -->
+            <li class="cursor-pointer uppercase font-bold"><a href="Event.html" class="hover:text-indigo-600 transition-colors">Events</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="result.html" class="hover:text-indigo-600 transition-colors">Result</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="contactus.html" class="hover:text-indigo-600 transition-colors">Contact Us</a></li>
+        </ul>
+
+        <div class="md:hidden">
+            <a id="hamburger" class="text-4xl cursor-pointer">&#8801;</a>
+        </div>
+    </nav>
+    
+    <ul id="mobile-menu" class="hidden flex-col items-center bg-indigo-200 text-indigo-700 font-bold mt-14 md:hidden fixed top-0 left-0 right-0 z-40">
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a></li>
+        <!-- <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="aboutus.html" class="hover:text-indigo-600 transition-colors">About Us</a></li> -->
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="Event.html" class="hover:text-indigo-600 transition-colors">Events</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="result.html" class="hover:text-indigo-600 transition-colors">Result</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="contactus.html" class="hover:text-indigo-600 transition-colors">Contact Us</a></li>
+    </ul>
+
+    <div class="w-full overflow-x-hidden bg-zinc-900 grid mt-14">
+        <div class="elem" style="--r: 1; --c: 3;"><img src="/img1.jpg" alt="Image 1"></div>
+        <div class="elem" style="--r: 1; --c: 7;"><img src="/img2.jpg" alt="Image 2"></div>
+        <div class="elem" style="--r: 2; --c: 2;"><img src="/img3.jpg" alt="Image 3"></div>
+        <div class="elem" style="--r: 2; --c: 6;"><img src="/img4.jpg" alt="Image 4"></div>
+        <div class="elem" style="--r: 3; --c: 4;"><img src="/img5.jpg" alt="Image 5"></div>
+        <div class="elem" style="--r: 3; --c: 8;"><img src="/img6.jpg" alt="Image 6"></div>
+        <div class="elem" style="--r: 4; --c: 1;"><img src="/img7.jpg" alt="Image 7"></div>
+        <div class="elem" style="--r: 4; --c: 4;"><img src="/img8.jpg" alt="Image 8"></div>
+        <div class="elem" style="--r: 5; --c: 2;"><img src="/img9.jpg" alt="Image 9"></div>
+        <div class="elem" style="--r: 5; --c: 6;"><img src="/img10.jpg" alt="Image 10"></div>
+        <div class="elem" style="--r: 6; --c: 3;"><img src="/img11.jpg" alt="Image 11"></div>
+        <div class="elem" style="--r: 6; --c: 7;"><img src="/img12.jpg" alt="Image 12"></div>
+        <div class="elem" style="--r: 7; --c: 5;"><img src="/img13.jpg" alt="Image 13"></div>
+        <div class="elem" style="--r: 7; --c: 8;"><img src="/img1.jpg" alt="Image 14"></div>
+        <div class="elem" style="--r: 8; --c: 1;"><img src="/img11.jpg" alt="Image 15"></div>
+        <div class="elem" style="--r: 8; --c: 4;"><img src="/img2.jpg" alt="Image 16"></div>
+        <div class="elem" style="--r: 9; --c: 2;"><img src="/img3.jpg" alt="Image 17"></div>
+        <div class="elem" style="--r: 9; --c: 6;"><img src="/img13.jpg" alt="Image 18"></div>
+        <div class="elem" style="--r: 10; --c: 3;"><img src="/img12.jpg" alt="Image 19"></div>
+        <div class="elem" style="--r: 10; --c: 7;"><img src="/img11.jpg" alt="Image 20"></div>
+    </div>
+    <div class="fixed top-0 left-0 font-['Helvetica_Now_Display'] w-full h-full flex flex-col items-center justify-center text-white fixed-overlay pointer-events-none">
+        <h1 class="text-4xl md:text-6xl lg:text-8xl uppercase mb-4 text-center">Thomas Vance <sup>®</sup></h1>
+        <h1 class="text-2xl md:text-4xl lg:text-5xl text-center">並外れたファッション</h1>
+    </div>
+
+    
+    <div class="w-full min-h-screen bg-[#d1d1d1] flex items-center justify-center mx-auto py-24 md:py-48 lg:py-96 relative z-[999] text-center">
+        <p class="text-white text-xl md:text-3xl lg:text-5xl w-full md:w-3/4 leading-8 md:leading-[3rem] lg:leading-[4.2rem] font-regular text-left p-4">
+            Thomas Vance is a renowned clothing brand known for its exceptional fashion and unique designs. Our collections are crafted with the finest materials and attention to detail, ensuring that each piece is a work of art. Discover the elegance and sophistication of Thomas Vance, where fashion meets excellence.
+        </p>
+    </div>
+
+
+    <section class="bg-white shadow-md p-6 rounded-lg text-center">
+        <!-- <h2 class="text-3xl font-semibold text-center mb-6">Event Highlights</h2> -->
+        
+        <!-- Responsive video container -->
+        <div class="video-container relative overflow-hidden" style="padding-top: 56.25%;"> <!-- 16:9 aspect ratio -->
+            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/vnmZAfIMNhA?si=-ngWxPCe4nVg29zV" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-6 mt-10 ">
+        <div class="container mx-auto text-center ">
+            <p class="text-2xl font-semibold mb-4">Follow Us</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.facebook.com/gecbbsr2006" target="_blank" class="text-white hover:text-blue-500">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/school/gandhi-engineering-college-gec-bhubaneswar/posts/?feedView=all" target="_blank" class="text-white hover:text-blue-400">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/gecbbsrofficial?igsh=MXRqYWQ0bTFtcDFobQ==" target="_blank" class="text-white hover:text-pink-500">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="" target="_blank" class="text-white hover:text-blue-600">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="https://youtube.com/@gandhiengineeringcollege?si=TsOheEWCtBCAJbDa" target="_blank" class="text-white hover:text-red-600">
+                    <i class="fab fa-youtube text-2xl"></i>
+                </a>
+            </div>
+            <!-- <p class="mt-4">&copy; 2024 Your Company. All rights reserved.</p> -->
+        </div>
+    </footer>
+
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="lenis.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // GSAP animation for images
+        gsap.registerPlugin(ScrollTrigger);
+
+        const mq = window.matchMedia("(min-width: 768px)");
+
+        function handleScreenChange(e) {
+            document.querySelectorAll(".elem").forEach(elem => {
+                if (e.matches) {
+                    elem.style.gridRow = elem.style.getPropertyValue('--r');
+                    elem.style.gridColumn = elem.style.getPropertyValue('--c');
+                } else {
+                    elem.style.gridRow = 'auto';
+                    elem.style.gridColumn = 'auto';
+                }
+            });
+        }
+
+        mq.addListener(handleScreenChange);
+        handleScreenChange(mq);
+
+        document.querySelectorAll(".elem").forEach(elem => {
+            let image = elem.querySelector("img");
+            let xTransform = gsap.utils.random(-100, 100);
+            let smallScreenXTransform = gsap.utils.random(-50, 50);
+
+            let transformValue = mq.matches ? xTransform : smallScreenXTransform;
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                }
+            });
+
+            tl.set(image, {
+                transformOrigin: `${transformValue < 0 ? '0%' : '100%'} center`,
+            }).to(image, {
+                scale: 0,
+                xPercent: transformValue,
+                ease: "none",
+            });
+
+            mq.addEventListener("change", (e) => {
+                transformValue = e.matches ? xTransform : smallScreenXTransform;
+                gsap.set(image, {
+                    transformOrigin: `${transformValue < 0 ? '0%' : '100%'} center`
+                });
+                gsap.to(image, {
+                    xPercent: transformValue
+                });
+            });
+        });
+
+        // Hide text when the grid images section is scrolled past
+        ScrollTrigger.create({
+            trigger: ".grid",
+            start: "bottom bottom",
+            onEnterBack: () => gsap.to(".fixed-overlay", { opacity: 1 }),
+            onLeave: () => gsap.to(".fixed-overlay", { opacity: 0 })
+        });
+
+        // Initialize Lenis for smooth scrolling
+        const lenis = new Lenis()
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    </script>
+
+</body>
+</html>

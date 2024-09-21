@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .custom-image {
+            width: 40px; 
+            height: auto; 
+            margin-right: 8px;
+            border-radius: 4px; 
+        }
+        #animation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            overflow: hidden;
+            z-index: -1;
+        }
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            grid-template-rows: repeat(20, 1fr);
+        }
+        .trigger {
+            width: 100%;
+            height: 100%;
+        }
+        .monitor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            transform-style: preserve-3d;
+        }
+        .camera {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+        .vr {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 350px;
+            height: 350px;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+        }
+        .vr_layer {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 153, 255, 0.006);
+            border-radius: 10px;
+            transform-style: preserve-3d;
+        }
+        .vr_layer_item {
+            width: 70%;
+            height: 70%;
+            border: 3px solid #fff;
+            border-radius: 100%;
+            background: rgba(0, 0, 0, 0.05);
+            animation: sphere 3000ms cubic-bezier(0.215, 0.610, 0.355, 1.000) alternate infinite,
+                       color 5000ms linear alternate infinite;
+            transition: 500ms;
+        }
+        @keyframes sphere {
+            0%, 50% {
+                transform: scale(0) rotateZ(45deg);
+            }
+            100% {
+                transform: scale(1) rotateZ(45deg);
+            }
+        }
+        @keyframes color {
+            0% {
+                border-color: #f55;
+            }
+            50% {
+                border-color: #55f;
+            }
+            100% {
+                border-color: #5f5;
+            }
+        }
+        #content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            background-color: rgba(15, 23, 42, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="animation-container">
+        <div class="grid">
+            <!-- Trigger elements will be dynamically added here -->
+        </div>
+        <div class="monitor">
+            <div class="camera o-x">
+                <div class="camera o-y">
+                    <div class="camera o-z">
+                        <div class="vr">
+                            <!-- VR layers will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <!-- Navbar -->
+        <nav class="w-full h-20 bg-[#1842B6] flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <img class="custom-image text-2xl text-white font-bold" src="/techfest1.png" alt="Custom Image">
+            </div>
+            <ul class="md:flex hidden font-semibold text-white flex-grow justify-center space-x-6">
+                <li class="cursor-pointer uppercase font-bold"><a href="index.html" class="hover:text-[#20c997] transition-colors">Home</a></li>
+                <li class="cursor-pointer uppercase font-bold"><a href="Event.html" class="hover:text-[#20c997] transition-colors">Events</a></li>
+                <li class="cursor-pointer uppercase font-bold"><a href="result.html" class="hover:text-[#20c997] transition-colors">Result</a></li>
+                <li class="cursor-pointer uppercase font-bold"><a href="contactus.html" class="hover:text-[#20c997] transition-colors">Contact Us</a></li>
+            </ul>
+            <div class="md:hidden">
+                <a id="hamburger" class="text-4xl cursor-pointer">&#8801;</a>
+            </div>
+        </nav>
+        
+        <ul id="mobile-menu" class="hidden flex-col items-center bg-[#1842B6] text-white font-bold mt-2 md:hidden">
+            <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="index.html" >Home</a></li>
+            <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="Event.html" >Events</a></li>
+            <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="result.html" >Result</a></li>
+            <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="contactus.html" >Contact Us</a></li>
+        </ul>
+
+        <!-- Main Content -->
+        <section class="container mx-auto px-4 py-8">
+            <h1 id="competition-heading" class="text-3xl font-bold text-center uppercase text-[#20c997] mb-8">Competition Results</h1>
+        
+            <!-- Table -->
+            <div class="overflow-x-auto">
+                <table class="min-w-full table-auto text-indigo-600 ">
+                    <thead class="bg-indigo-600 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Rank</th>
+                            <th class="px-4 py-2 text-left">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Collapsible Row 1 -->
+                        <tr class="cursor-pointer " onclick="toggleDetails(this)">
+                            <td colspan="2" class=" border-solid border-2 border-sky-500 text-white px-4 py-4">Coding Solving</td>
+                        </tr>
+                        <tr class="details hidden">
+                            <td class="px-4 py-2">1</td>
+                            <td class="px-4 py-2">John Doe</td>
+                        </tr>
+                        <tr class="details hidden">
+                            <td class="px-4 py-2">2</td>
+                            <td class="px-4 py-2">Jane Smith</td>
+                        </tr>
+
+                        <!-- Collapsible Row 2 -->
+                        <tr class="cursor-pointer" onclick="toggleDetails(this)">
+                            <td colspan="2" class=" border-solid border-2 border-sky-500 text-white px-4 py-4">Problem Solving</td>
+                        </tr>
+                        <tr class="details hidden">
+                            <td class="px-4 py-2">1</td>
+                            <td class="px-4 py-2">John Doe</td>
+                        </tr>
+                        <tr class="details hidden">
+                            <td class="px-4 py-2">2</td>
+                            <td class="px-4 py-2">Jane Smith</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script>
+        // Toggle mobile menu visibility
+        document.getElementById('hamburger').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Toggle details row visibility
+        function toggleDetails(row) {
+            let nextRow = row.nextElementSibling;
+            while (nextRow && nextRow.tagName === 'TR' && nextRow.classList.contains('details')) {
+                nextRow.classList.toggle('hidden');
+                nextRow = nextRow.nextElementSibling;
+            }
+        }
+
+        gsap.from("#competition-heading", { 
+            duration: 1.5, 
+            opacity: 0, 
+            y: -50, 
+            ease: "power3.out" 
+        });
+
+        // Create 400 trigger elements
+        const grid = document.querySelector('.grid');
+        for (let i = 0; i < 400; i++) {
+            const trigger = document.createElement('div');
+            trigger.className = 'trigger';
+            grid.appendChild(trigger);
+        }
+
+        // Create 20 vr_layer elements
+        const vr = document.querySelector('.vr');
+        for (let i = 0; i < 20; i++) {
+            const layer = document.createElement('div');
+            layer.className = 'vr_layer';
+            layer.style.transform = `translateZ(${(i + 1) * (350 / 20) - 350 / 2}px)`;
+            
+            const item = document.createElement('div');
+            item.className = 'vr_layer_item';
+            item.style.animationDelay = `${i * -210}ms`;
+            
+            layer.appendChild(item);
+            vr.appendChild(layer);
+        }
+
+        // Add hover effect for rotation
+        const container = document.querySelector('#animation-container');
+        const cameraX = document.querySelector('.camera.o-x');
+        const cameraY = document.querySelector('.camera.o-y');
+
+        let rotationX = 0;
+        let rotationY = 0;
+        let targetRotationX = 0;
+        let targetRotationY = 0;
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            rotationX += (targetRotationX - rotationX) * 0.05;
+            rotationY += (targetRotationY - rotationY) * 0.05;
+
+            cameraY.style.transform = `rotateY(${rotationY}deg)`;
+            cameraX.style.transform = `rotateX(${rotationX}deg)`;
+        }
+
+        animate();
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            
+            targetRotationY = ((x / window.innerWidth) - 0.5) * 120;
+            targetRotationX = ((y / window.innerHeight) - 0.5) * -120;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            targetRotationX = 0;
+            targetRotationY = 0;
+        });
+    </script>
+</body>
+</html>

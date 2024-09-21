@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TechFest 2024 - SQL Workshop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .custom-image {
+    width: 40px; 
+    height: auto; 
+    margin-right: 8px;
+    border-radius: 4px; 
+}
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-black">
+
+    <!-- Navbar -->
+    <nav class="w-full h-14 bg-indigo-200 flex justify-between items-center px-4">
+        <div class="flex items-center">
+            <img class="custom-image text-2xl text-indigo-700 font-bold" src="/techfest1.png" alt="Custom Image">
+        </div>
+        <ul class="md:flex hidden font-semibold flex-grow justify-center space-x-6">
+            <li class="cursor-pointer uppercase font-bold"><a href="home.html">Home</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="competition.html">Competition</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="result.html">Result</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="contactus.html">Contact Us</a></li>
+        </ul>
+
+        <div class="md:hidden">
+            <a id="hamburger" class="text-4xl cursor-pointer">&#8801;</a>
+        </div>
+    </nav>
+    
+
+    <ul id="mobile-menu" class="hidden flex-col items-center bg-indigo-200 text-indigo-700 font-bold mt-2 md:hidden">
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="home.html">Home</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="competition.html">Competition</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="result.html">Result</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="contactus.html">Contact Us</a></li>
+    </ul>
+
+    <!-- Event Header -->
+    <header class="bg-blue-600 text-white py-12">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">TechFest 2024 - SQL Workshop</h1>
+            <p class="mt-2 text-lg">Master the Power of Databases!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-8 p-4 space-y-8">
+        <!-- Event Date and Coordinators -->
+        <section class="bg-white shadow-md p-6 rounded-lg">
+            <h2 class="text-3xl font-semibold text-center mb-6">Event Details</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">Date of Event</h3>
+                    <p class="text-lg text-blue-600">15th November 2024</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">Coordinators</h3>
+                    <p>Student: <span class="text-blue-600">Vivek Kumar Ray</span></p>
+                    <p>Teacher: <span class="text-blue-600">Prof. Jane Doe</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Description -->
+        <section class="bg-white shadow-md p-6 rounded-lg">
+            <h2 class="text-3xl font-semibold text-center mb-6">About the Event</h2>
+            <p class="text-lg text-justify mb-4">
+                The SQL Workshop at TechFest 2024 is a hands-on session designed to equip students with practical skills in database management. Participants will learn how to create, manage, and manipulate databases using Structured Query Language (SQL). This workshop is a great opportunity for beginners and intermediate learners to enhance their SQL knowledge and get insights into real-world database applications.
+            </p>
+            <p class="text-lg text-justify mb-4">
+                Through this workshop, participants will understand the importance of databases in modern software applications and how SQL can be used to query, update, and manage databases efficiently.
+            </p>
+        </section>
+
+        <!-- Event Rules and Regulations -->
+        <section class="bg-white shadow-md p-6 rounded-lg">
+            <h2 class="text-3xl font-semibold text-center mb-6">Workshop Guidelines</h2>
+            <ul class="list-disc list-inside text-lg space-y-3">
+                <li>Participants must be current university students.</li>
+                <li>Prior knowledge of SQL is not required but beneficial.</li>
+                <li>Laptops with SQL database software (e.g., MySQL, PostgreSQL) pre-installed are required.</li>
+                <li>Participants must complete exercises and submit queries by the end of the session.</li>
+                <li>Certificates will be provided upon successful completion.</li>
+            </ul>
+        </section>
+
+        <!-- Event Video -->
+        <section class="bg-white shadow-md p-6 rounded-lg text-center">
+            <h2 class="text-3xl font-semibold text-center mb-6">Workshop Preview</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/tvlT85tr55w?si=2C0Fl8OiQ0Q" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen 
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Registration Link -->
+        <section class="bg-white shadow-md p-6 rounded-lg text-center">
+            <h2 class="text-3xl font-semibold text-center mb-6">Join the SQL Workshop</h2>
+            <p class="text-lg mb-4">Register now to enhance your database management skills!</p>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300 ease-in-out">
+                Register Now
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 TechFest</p>
+        </div>
+    </footer>
+
+    <!-- Script for Mobile Menu Toggle -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
