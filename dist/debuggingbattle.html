@@ -5,13 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TechFest 2024 - Debugging Battle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+       #mobile-menu {
+            display: none;
+            flex-direction: column;
+        }
         .custom-image {
-            width: 40px; 
-            height: auto; 
-            margin-right: 8px;
-            border-radius: 4px; 
+    width: 40px; 
+    height: auto; 
+    margin-right: 8px;
+    border-radius: 4px; 
+}
+
+        @media (max-width: 768px) {
+            #mobile-menu.show {
+                display: flex;
+            }
         }
         .video-container {
             position: relative;
@@ -35,15 +46,16 @@
 <body class="bg-slate-950 text-black">
 
     <!-- Navbar -->
-    <nav class="w-full h-14 bg-indigo-200 flex justify-between items-center px-4">
+    <nav class="w-full h-20 bg-[#1842B6] flex justify-between items-center px-4">
         <div class="flex items-center">
-            <img class="custom-image text-2xl text-indigo-700 font-bold" src="/techfest1.png" alt="Custom Image">
+            <img class="custom-image text-2xl text-white font-bold" src="img/techfest1.png" alt="Custom Image">
         </div>
-        <ul class="md:flex hidden font-semibold flex-grow justify-center space-x-6">
-            <li class="cursor-pointer uppercase font-bold"><a href="home.html">Home</a></li>
-            <li class="cursor-pointer uppercase font-bold"><a href="Event.html">event</a></li>
-            <li class="cursor-pointer uppercase font-bold"><a href="result.html">Result</a></li>
-            <li class="cursor-pointer uppercase font-bold"><a href="contactus.html">Contact Us</a></li>
+        <ul class="md:flex hidden font-semibold text-white flex-grow justify-center space-x-6">
+            <li class="cursor-pointer uppercase font-bold"><a href="index.html" class="hover:text-[#20c997] transition-colors">Home</a></li>
+            <!-- <li class="cursor-pointer uppercase font-bold"><a href="aboutus.html" class="hover:text-[#20c997] transition-colors">About Us</a></li> -->
+            <li class="cursor-pointer uppercase font-bold"><a href="Event.html" class="hover:text-[#20c997] transition-colors">Events</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="result.html" class="hover:text-[#20c997] transition-colors">Result</a></li>
+            <li class="cursor-pointer uppercase font-bold"><a href="contactus.html" class="hover:text-[#20c997] transition-colors">Contact Us</a></li>
         </ul>
 
         <div class="md:hidden">
@@ -51,13 +63,15 @@
         </div>
     </nav>
     
-    <!-- Mobile Menu -->
-    <ul id="mobile-menu" class="hidden flex-col items-center bg-indigo-200 text-indigo-700 font-bold mt-2 md:hidden">
-        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="home.html">Home</a></li>
-        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="Event.html">Event</a></li>
-        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="result.html">Result</a></li>
-        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="contactus.html">Contact Us</a></li>
+
+    <ul id="mobile-menu" class="hidden flex-col items-center bg-[#1842B6] text-white font-bold mt-2 md:hidden">
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="index.html" >Home</a></li>
+        <!-- <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="aboutus.html" >About Us</a></li> -->
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="Event.html" >Events</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="result.html" >Result</a></li>
+        <li class="px-2 py-2 cursor-pointer uppercase font-bold"><a href="contactus.html" >Contact Us</a></li>
     </ul>
+
 
     <!-- Event Header -->
     <header class="bg-blue-600 text-white py-12">
@@ -69,20 +83,21 @@
 
     <!-- Main Content -->
     <main class="container mx-auto mt-8 p-4 space-y-8">
-        <!-- Event Date -->
+        <!-- Event Date and Coordinators -->
         <section class="bg-white shadow-md p-6 rounded-lg">
-            <h2 class="text-3xl font-semibold text-center mb-6">Date of Event</h2>
-            <div class="text-center">
-                <p class="text-lg text-blue-600">20th November 2024</p>
-            </div>
-        </section>
-
-        <!-- Coordinators -->
-        <section class="bg-white shadow-md p-6 rounded-lg">
-            <h2 class="text-3xl font-semibold text-center mb-6">Coordinators</h2>
-            <div class="text-center">
-                <p>Student: <span class="text-blue-600">Vivek Kumar Ray</span></p>
-                <p>Teacher: <span class="text-blue-600">Prof. John Smith</span></p>
+            <h2 class="text-3xl font-semibold text-center mb-6">Event Details</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Event Date -->
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">Date of Event</h3>
+                    <p class="text-lg text-blue-600">12th November 2024</p>
+                </div>
+                <!-- Coordinators -->
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold mb-2">Coordinators</h3>
+                    <p>Student: <span class="text-blue-600">Vivek Kumar Ray</span></p>
+                    <p>Teacher: <span class="text-blue-600">Prof. John Doe</span></p>
+                </div>
             </div>
         </section>
 
@@ -99,7 +114,6 @@
                 Participants who can swiftly and accurately fix the errors will be awarded exciting prizes!
             </p>
         </section>
-
         <!-- Event Rules and Regulations -->
         <section class="bg-white shadow-md p-6 rounded-lg">
             <h2 class="text-3xl font-semibold text-center mb-6">Rules and Regulations</h2>
@@ -113,12 +127,18 @@
         </section>
 
         <!-- Event Video -->
-        <!-- <section class="bg-white shadow-md p-6 rounded-lg text-center">
+      
+         <section class="bg-white shadow-md p-6 rounded-lg text-center">
             <h2 class="text-3xl font-semibold text-center mb-6">Event Highlights</h2>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/W-IUGXXY8p4?si=PbUqrJZyu6YFyhRl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-        </section> -->
+        </section>
+        
+        
+
+
+
 
         <!-- Registration Link -->
         <section class="bg-white shadow-md p-6 rounded-lg text-center">
@@ -136,14 +156,13 @@
             <p>&copy; 2024 TechFest</p>
         </div>
     </footer>
-
 </body>
-<script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-</script>
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </html>
